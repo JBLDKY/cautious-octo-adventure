@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <head>
+    <meta charset="arial" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript print array</title>
+    <h1>3 Cycle Generator by Jordan</h1>
+  
+  <div class="menu2"> <!-- // The table generator automatically checks the letter scheme first, if the arrays
+    used to create the table are empty, the website might crash -->
+    <button onclick="grabValues(); UFRTable(); betterTable(); resetTable()">UFR 3-cycles</button>
+    <button onclick="grabValues(); UFTable(); betterTable(); resetTable();"> UF 3-cycles </button>
+    <button onclick="test();"> TEST </button>
+    <input type="number" value = 100> </input> 
+       <script src="nc.js">
+    </script>
+   
+
+
+    <style>
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+      
+      .dropdown-content {
+      display: none;
+      position: relative;
+      background-color: rgb(0, 0, 0);
+      min-width: 500px;
+      box-shadow: 0px 25px 35px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        border: black;
+        
+      }
+      
+      .dropdown:hover .dropdown-content{
+      display: block;
+      }
+        </style>
+        <div class ="dropdown">
+          <button>Lettering Scheme</button>
+      <div class = "dropdown-content">
+        <table id ="mouseover" class="Lscheme">
+          <tr id="1">
+            <!--ROW 1-->
+      
+            <td id="CELL0" colspan="3"></td>
+            <td id="CELL23">
+              <input
+                class="Corner"
+                id="U"
+                type="text"
+                maxlength="1"
+                name="UBL"
+                size="1"
+                onClick="this.select();"
+                value="A"
+              />
+            </td>
+            <td id="CELL23">
+              <input
+                class="Edge"
+                id="U"
+                type="text"
+                maxlength="1"
+                name="UB"
+                size="1"
+                onClick="this.select();"
+                value="A"
+              />
+            </td>
+            <td id="CELL23">
+              <input
+                class="Corner"
+                id="U"
+                type="text"
+                maxlength="1"
+                name="UBR"
+                size="1"
+                onClick="this.select();"
+                value="B"
+              />
+            </td>
+            <td id="CELL0" colspan="6"></td>
+          </tr>
+          <tr id="1">
+            <!-- ROW 2-->
+            <td id="CELL0" colspan="3"></td>
+            <td id="CELL23">
+              <input
+                class="Edge"
+                id="U"
+                type="text"
+                maxlength="1"
+                name="UL"
+                size="1"
+                onClick="this.select();"
+                value="D"
+              />
+            </td>
+            <td id="CELL23"></td>
+            <td id="CELL23">
+              <input
+                class="Edge"
+                id="U"
+                type="text"
+                maxlength="1"
+                name="UR"
+                size="1"
+                onClick="this.select();"
+                value="B"
+              />
+            </td>
+            <td id="CELL0" colspan="6"></td>
+          </tr>
+          <tr id="1">
+            <!--ROW 3-->
+            <td id="CELL0" colspan="3"></td>
+            <td id="CELL23">
+              <input
+                class="Corner"
+                id="U"
+                type="text"
+                maxlength="1"
+                name="UFL"
+                size="1"
+                onClick="this.select();"
+                value="D"
+              />
+            </td>
+            <td id="CELL23"></td>
+            <td id="CELL23"></td>
+            <td id="CELL0" colspan="6"></td>
+          </tr>
+          <!--Row 4-->
+          <tr id="2">
+            <td id="CELL20">
+              <input
+                class="Corner"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="UBL"
+                size="1"
+                onClick="this.select();"
+                value="E"
+              />
+            </td>
+            <td id="CELL20">
+              <input
+                class="Edge"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="LU"
+                size="1"
+                onClick="this.select();"
+                value="E"
+              />
+            </td>
+            <td id="CELL20">
+              <input
+                class="Corner"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="UFL"
+                size="1"
+                onClick="this.select();"
+                value="F"
+              />
+            </td>
+            <td id="CELL19">
+              <input
+                class="Corner"
+                id="F"
+                type="text"
+                maxlength="1"
+                name="UFL"
+                size="1"
+                onClick="this.select();"
+                value="I"
+              />
+            </td>
+            <td id="CELL19"></td>
+            <td id="CELL19"></td>
+            <td id="CELL21"></td>
+            <td id="CELL21">
+              <input
+                class="Edge"
+                id="R"
+                type="text"
+                maxlength="1"
+                name="RU"
+                size="1"
+                onClick="this.select();"
+                value="M"
+              />
+            </td>
+            <td id="CELL21">
+              <input
+                class="Corner"
+                id="R"
+                type="text"
+                maxlength="1"
+                name="UBR"
+                size="1"
+                onClick="this.select();"
+                value="N"
+              />
+            </td>
+            <td id="CELL24">
+              <input
+                class="Corner"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="UBR"
+                size="1"
+                onClick="this.select();"
+                value="Q"
+              />
+            </td>
+            <td id="CELL24">
+              <input
+                class="Edge"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="BU"
+                size="1"
+                onClick="this.select();"
+                value="Q"
+              />
+            </td>
+            <td id="CELL24">
+              <input
+                class="Corner"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="UBL"
+                size="1"
+                onClick="this.select();"
+                value="R"
+              />
+            </td>
+          </tr>
+          <tr id="2">
+            <!-- ROW 5-->
+            <td id="CELL20">
+              <input
+                class="Edge"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="LB"
+                size="1"
+                onClick="this.select();"
+                value="H"
+              />
+            </td>
+            <td id="CELL20"></td>
+            <td id="CELL20">
+              <input
+                class="Edge"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="LF"
+                size="1"
+                onClick="this.select();"
+                value="F"
+              />
+            </td>
+            <td id="CELL19">
+              <input
+                class="Edge"
+                id="F"
+                type="text"
+                maxlength="1"
+                name="FL"
+                size="1"
+                onClick="this.select();"
+                value="L"
+              />
+            </td>
+            <td id="CELL19"></td>
+            <td id="CELL19">
+              <input
+                class="Edge"
+                id="F"
+                type="text"
+                maxlength="1"
+                name="FR"
+                size="1"
+                onClick="this.select();"
+                value="J"
+              />
+            </td>
+            <td id="CELL21">
+              <input
+                class="Edge"
+                id="R"
+                type="text"
+                maxlength="1"
+                name="RF"
+                size="1"
+                onClick="this.select();"
+                value="P"
+              />
+            </td>
+            <td id="CELL21"></td>
+            <td id="CELL21">
+              <input
+                class="Edge"
+                id="R"
+                type="text"
+                maxlength="1"
+                name="RB"
+                size="1"
+                onClick="this.select();"
+                value="N"
+              />
+            </td>
+            <td id="CELL24">
+              <input
+                class="Edge"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="BR"
+                size="1"
+                onClick="this.select();"
+                value="T"
+              />
+            </td>
+            <td id="CELL24"></td>
+            <td id="CELL24">
+              <input
+                class="Edge"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="FR"
+                size="1"
+                onClick="this.select();"
+                value="R"
+              />
+            </td>
+          </tr>
+          <tr id="2">
+            <!-- ROW 5-->
+            <td id="CELL20">
+              <input
+                class="Corner"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="DBL"
+                size="1"
+                onClick="this.select();"
+                value="H"
+              />
+            </td>
+            <td id="CELL20">
+              <input
+                class="Edge"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="LD"
+                size="1"
+                onClick="this.select();"
+                value="G"
+              />
+            </td>
+            <td id="CELL20">
+              <input
+                class="Corner"
+                id="L"
+                type="text"
+                maxlength="1"
+                name="DFL"
+                size="1"
+                onClick="this.select();"
+                value="G"
+              />
+            </td>
+            <td id="CELL19">
+              <input
+                class="Corner"
+                id="F"
+                type="text"
+                maxlength="1"
+                name="DFL"
+                size="1"
+                onClick="this.select();"
+                value="L"
+              />
+            </td>
+            <td id="CELL19">
+              <input
+                class="Edge"
+                id="F"
+                type="text"
+                maxlength="1"
+                name="FD"
+                size="1"
+                onClick="this.select();"
+                value="K"
+              />
+            </td>
+            <td id="CELL19">
+              <input
+                class="Corner"
+                id="F"
+                type="text"
+                maxlength="1"
+                name="DFR"
+                size="1"
+                onClick="this.select();"
+                value="K"
+              />
+            </td>
+            <td id="CELL21">
+              <input
+                class="Corner"
+                id="R"
+                type="text"
+                maxlength="1"
+                name="DFR"
+                size="1"
+                onClick="this.select();"
+                value="P"
+              />
+            </td>
+            <td id="CELL21">
+              <input
+                class="Edge"
+                id="R"
+                type="text"
+                maxlength="1"
+                name="RD"
+                size="1"
+                onClick="this.select();"
+                value="O"
+              />
+            </td>
+            <td id="CELL21">
+              <input
+                class="Corner"
+                id="R"
+                type="text"
+                maxlength="1"
+                name="DBR"
+                size="1"
+                onClick="this.select();"
+                value="O"
+              />
+            </td>
+            <td id="CELL24">
+              <input
+                class="Corner"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="DBR"
+                size="1"
+                onClick="this.select();"
+                value="T"
+              />
+            </td>
+            <td id="CELL24">
+              <input
+                class="Edge"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="BD"
+                size="1"
+                onClick="this.select();"
+                value="S"
+              />
+            </td>
+            <td id="CELL24">
+              <input
+                class="Corner"
+                id="B"
+                type="text"
+                maxlength="1"
+                name="DBL"
+                size="1"
+                onClick="this.select();"
+                value="S"
+              />
+            </td>
+          </tr>
+          <tr id="3">
+            <!-- ROW 6-->
+            <td id="CELL0" colspan="3"></td>
+            <td id="CELL22">
+              <input
+                class="Corner"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DFL"
+                size="1"
+                onClick="this.select();"
+                value="U"
+              />
+            </td>
+            <td id="CELL22">
+              <input
+                class="Edge"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DF"
+                size="1"
+                onClick="this.select();"
+                value="U"
+              />
+            </td>
+            <td id="CELL22">
+              <input
+                class="Corner"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DFR"
+                size="1"
+                onClick="this.select();"
+                value="V"
+              />
+            </td>
+            <td id="CELL0" colspan="6"></td>
+          </tr>
+          <tr id="3">
+            <!-- ROW 7-->
+            <td id="CELL0" colspan="3"></td>
+            <td id="CELL22">
+              <input
+                class="Edge"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DL"
+                size="1"
+                onClick="this.select();"
+                value="X"
+              />
+            </td>
+            <td id="CELL22"></td>
+            <td id="CELL22">
+              <input
+                class="Edge"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DR"
+                size="1"
+                onClick="this.select();"
+                value="V"
+              />
+            </td>
+            <td id="CELL0" colspan="6"></td>
+          </tr>
+          <tr id="3">
+            <!-- ROW 7-->
+            <td id="CELL0" colspan="3"></td>
+            <td id="CELL22">
+              <input
+                class="Corner"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DBL"
+                size="1"
+                onClick="this.select();"
+                value="X"
+              />
+            </td>
+            <td id="CELL22">
+              <input
+                class="Edge"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DB"
+                size="1"
+                onClick="this.select();"
+                value="W"
+              />
+            </td>
+            <td id="CELL22">
+              <input
+                class="Corner"
+                id="D"
+                type="text"
+                maxlength="1"
+                name="DBR"
+                size="1"
+                onClick="this.select();"
+                value="W"
+              />
+            </td>
+            <td id="CELL0" colspan="6"></td>
+          </tr>
+        </table>
+      
+      </div>
+      
+        </div>
+        
+      
+       
+         
+  </head>
+
+
+  <body>
+
+
+
+ 
+    <div id="container"></div>
+
+ 
+  </body>
+</html>
