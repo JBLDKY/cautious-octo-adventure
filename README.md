@@ -1,4 +1,6 @@
 # cautious-octo-adventure
+Version 1.1 is available on the right over there -->
+
 A simple customizable 3cycle generator for commutators on a 3x3 rubik's cube
 
 CONTACT ME:
